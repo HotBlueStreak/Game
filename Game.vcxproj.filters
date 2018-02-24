@@ -11,6 +11,15 @@
     <Filter Include="Source Files\Utilities">
       <UniqueIdentifier>{4467dcf6-60ef-4827-9b5b-aed5bb6757a1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Resource Manager">
+      <UniqueIdentifier>{e7f08f9d-b351-42cb-861c-0088ef4a809c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Event Manager">
+      <UniqueIdentifier>{f25eea74-dbc6-46e7-acd4-e109448f4d14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Window">
+      <UniqueIdentifier>{6e663245-0735-443c-9cec-e7b4318c1b7c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Sources\Main\Main.cpp">
@@ -19,10 +28,39 @@
     <ClCompile Include="Sources\Utilities\stdafx.cpp">
       <Filter>Source Files\Utilities</Filter>
     </ClCompile>
+    <ClCompile Include="Sources\Main\Game.cpp">
+      <Filter>Source Files\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Event Manager\EventManager.cpp">
+      <Filter>Source Files\Event Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Window\GameWindow.cpp">
+      <Filter>Source Files\Window</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Sources\Utilities\stdafx.h">
       <Filter>Source Files\Utilities</Filter>
     </ClInclude>
+    <ClInclude Include="Sources\Main\Game.h">
+      <Filter>Source Files\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Resource Manager\ResourceHolder.h">
+      <Filter>Source Files\Resource Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Resource Manager\ResourceIdentifiers.h">
+      <Filter>Source Files\Resource Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Event Manager\EventManager.h">
+      <Filter>Source Files\Event Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Window\GameWindow.h">
+      <Filter>Source Files\Window</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sources\Resource Manager\ResourceHolder.inl">
+      <Filter>Source Files\Resource Manager</Filter>
+    </None>
   </ItemGroup>
 </Project>

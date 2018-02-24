@@ -1,4 +1,3 @@
-﻿  stdafx.cpp
-  Main.cpp
-  Generating Code...
+﻿  EventManager.cpp
+c:\users\hotbl\documents\github\game\game\sources\event manager\eventmanager.cpp(186): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   Game.vcxproj -> C:\Users\hotbl\Documents\GitHub\Game\Game\Bin\x64\Debug\Game.exe

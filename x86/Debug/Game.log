@@ -1,4 +1,7 @@
-﻿  stdafx.cpp
+﻿  GameWindow.cpp
   Main.cpp
+  Game.cpp
+c:\users\hotbl\documents\github\game\game\sources\main\game.cpp(41): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  EventManager.cpp
   Generating Code...
   Game.vcxproj -> C:\Users\hotbl\Documents\GitHub\Game\Game\Bin\x86\Debug\Game.exe

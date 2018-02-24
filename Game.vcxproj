@@ -19,11 +19,22 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Sources\Event Manager\EventManager.cpp" />
+    <ClCompile Include="Sources\Main\Game.cpp" />
     <ClCompile Include="Sources\Main\Main.cpp" />
     <ClCompile Include="Sources\Utilities\stdafx.cpp" />
+    <ClCompile Include="Sources\Window\GameWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Sources\Event Manager\EventManager.h" />
+    <ClInclude Include="Sources\Main\Game.h" />
+    <ClInclude Include="Sources\Resource Manager\ResourceHolder.h" />
+    <ClInclude Include="Sources\Resource Manager\ResourceIdentifiers.h" />
     <ClInclude Include="Sources\Utilities\stdafx.h" />
+    <ClInclude Include="Sources\Window\GameWindow.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sources\Resource Manager\ResourceHolder.inl" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
