@@ -2,8 +2,6 @@
 
 Game::Game() : m_window("Game", sf::Vector2u(800, 600))
 {
-	LoadTextures();
-	m_window.GetEventManager()->AddCallback("Move", &Game::Move, this);
 }
 
 Game::~Game()
@@ -35,33 +33,20 @@ void Game::Run(int minimum_frame_per_seconds)
 	}
 }
 
-void Game::Move(EventDetails* l_details)
-{
-	sf::Vector2i mouse_position = m_window.GetEventManager()->GetMousePosition(m_window.GetRenderWindow());
-	m_sprite.setPosition(mouse_position.x, mouse_position.y);
-
-	std::cout << "Moving sprite to: " << mouse_position.x << ":" << mouse_position.y << std::endl;
-}
-
 void Game::HandleInput()
 {
-}
-
-void Game::LoadTextures()
-{
-	m_texture.Load(Textures::PlayerRed, "Data/Textures/PlayerRed.png");
-	m_sprite.setTexture(m_texture.Get(Textures::PlayerRed));
 }
 
 void Game::Update(sf::Time delta_time)
 {
 	m_window.Update();
+	m_player.Update(delta_time);
 }
 
 void Game::Render()
 {
 	m_window.BeginDraw();
-	m_window.Draw(m_sprite);
+	m_window.Draw(m_player);
 	m_window.EndDraw();
 }
 

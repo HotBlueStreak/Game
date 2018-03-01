@@ -1,3 +1,8 @@
-﻿  EventManager.cpp
-c:\users\hotbl\documents\github\game\game\sources\event manager\eventmanager.cpp(186): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+﻿  Game.cpp
+  Player.cpp
+c:\users\hotbl\documents\github\game\game\sources\entities\player.cpp(50): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\hotbl\documents\github\game\game\sources\entities\player.cpp(59): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  Generating Code...
+  Skipping... (no relevant changes detected)
+  Main.cpp
   Game.vcxproj -> C:\Users\hotbl\Documents\GitHub\Game\Game\Bin\x64\Debug\Game.exe

@@ -4,6 +4,7 @@
 #include "../Event Manager/EventManager.h"
 #include "../Resource Manager/ResourceHolder.h"
 #include "../Resource Manager/ResourceIdentifiers.h"
+#include "../Entities/Player.h"
 
 
 class Game : private sf::NonCopyable
@@ -20,8 +21,6 @@ public:
 	void RestartClock();
 
 private:
-	void Move(EventDetails* l_details);
-	void LoadTextures();
 	void HandleInput();
 	void Update(sf::Time delta_time);
 	void Render();
@@ -29,8 +28,9 @@ private:
 private:
 	GameWindow m_window;
 
+	Player m_player;
+
 	TextureHolder m_texture;
-	sf::Sprite m_sprite;
 
 	sf::Clock m_clock;
 	sf::Time m_elapsed;
