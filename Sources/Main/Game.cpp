@@ -2,6 +2,7 @@
 
 Game::Game() : m_window("Game", sf::Vector2u(800, 600))
 {
+	m_map.Load("Sources/Configurations/map.txt");
 }
 
 Game::~Game()
@@ -46,6 +47,7 @@ void Game::Update(sf::Time delta_time)
 void Game::Render()
 {
 	m_window.BeginDraw();
+	m_map.MapRenderer(m_window.GetRenderWindow());
 	m_window.Draw(m_player);
 	m_window.EndDraw();
 }

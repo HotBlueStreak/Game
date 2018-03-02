@@ -5,6 +5,7 @@
 #include "../Resource Manager/ResourceHolder.h"
 #include "../Resource Manager/ResourceIdentifiers.h"
 #include "../Entities/Player.h"
+#include "../Map/Map.h"
 
 
 class Game : private sf::NonCopyable
@@ -31,6 +32,8 @@ private:
 	Player m_player;
 
 	TextureHolder m_texture;
+
+	Map m_map;
 
 	sf::Clock m_clock;
 	sf::Time m_elapsed;

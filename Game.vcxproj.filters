@@ -23,6 +23,9 @@
     <Filter Include="Source Files\Entites">
       <UniqueIdentifier>{d9b7b647-c655-49f9-ab92-1751092a1a8b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Map">
+      <UniqueIdentifier>{b944c8e6-207b-42dd-9e41-0116652ff480}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Sources\Main\Main.cpp">
@@ -42,6 +45,9 @@
     </ClCompile>
     <ClCompile Include="Sources\Entities\Player.cpp">
       <Filter>Source Files\Entites</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Map\Map.cpp">
+      <Filter>Source Files\Map</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -65,6 +71,9 @@
     </ClInclude>
     <ClInclude Include="Sources\Entities\Player.h">
       <Filter>Source Files\Entites</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Map\Map.h">
+      <Filter>Source Files\Map</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

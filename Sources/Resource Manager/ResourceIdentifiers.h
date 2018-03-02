@@ -13,7 +13,7 @@ namespace Textures
 	{
 		PlayerRed,
 		PlayerBlue,
-		Ground
+		Map
 	};
 }
 
