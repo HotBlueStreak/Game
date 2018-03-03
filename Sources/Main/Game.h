@@ -30,11 +30,7 @@ private:
 	GameWindow m_window;
 
 	Player m_player;
-
-	TextureHolder m_texture;
-
-	Map m_map;
-
+	
 	sf::Clock m_clock;
 	sf::Time m_elapsed;
 };

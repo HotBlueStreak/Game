@@ -1,3 +1,10 @@
-﻿  Map.cpp
-c:\users\hotbl\documents\github\game\game\sources\map\map.cpp(95): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+﻿  Player.cpp
+c:\users\hotbl\documents\github\game\game\sources\entities\player.cpp(17): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+c:\users\hotbl\documents\github\game\game\sources\entities\player.cpp(18): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+c:\users\hotbl\documents\github\game\game\sources\entities\player.cpp(23): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\hotbl\documents\github\game\game\sources\entities\player.cpp(26): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\hotbl\documents\github\game\game\sources\entities\player.cpp(29): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\hotbl\documents\github\game\game\sources\entities\player.cpp(32): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\hotbl\documents\github\game\game\sources\entities\player.cpp(86): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\hotbl\documents\github\game\game\sources\entities\player.cpp(95): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
   Game.vcxproj -> C:\Users\hotbl\Documents\GitHub\Game\Game\Bin\x64\Debug\Game.exe

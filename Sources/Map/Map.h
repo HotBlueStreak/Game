@@ -1,34 +1,45 @@
-#pragma once 
+#pragma once
 
 #include <fstream>
 #include <sstream>
 
-#include "../Window/GameWindow.h"
+#include "Tile.h"
+#include "TileType.h"
 #include "../Resource Manager/ResourceHolder.h"
 #include "../Resource Manager/ResourceIdentifiers.h"
 
-class Map : public sf::Drawable
+class Map
 {
 public:
-	void Load(const std::string path);
-	void Save(const std::string path);
+	static void Load(const std::string path);
 
-	void InitMap(const int width, const int height);
+	static Map* GetMap();
 
-	void MapRenderer(sf::RenderWindow* window);
+	void SetTextures();
 
 	int GetWidth() const;
 	int GetHeight() const;
 
+	void MapRenderer(sf::RenderWindow* window);
+
+	Tile* GetTile(const short x, const short y) const;
+	Tile* GetTile(const sf::Vector2f coordinates) const;
+
 private:
-	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
+	Map();
+	Map(const int width, const int height);
+	~Map();
 
-	int m_width;
-	int m_height;
+private:
+	static Map map_;
 
-	TextureHolder m_texture;
+	int width_;
+	int height_;
+
+	//TextureHolder texture;
+	sf::Texture m_texture;
 	sf::Sprite m_sprite;
 
-	std::vector<std::string> m_map;
-
+	std::vector<std::vector<Tile>> tiles_;
 };
+

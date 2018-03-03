@@ -1,5 +1,7 @@
 #include "Map.h"
 
+Map Map::map_;
+
 std::vector<std::string> LoadFile(const std::string path)
 {
 	std::ifstream file(path);
@@ -37,14 +39,52 @@ std::vector<std::string> SplitString(std::string string, const char delimiter)
 	return strings;
 }
 
-void Map::InitMap(const int width, const int height)
+void Map::MapRenderer(sf::RenderWindow* window)
 {
-	m_width = width;
-	m_height = height;
-	m_map.reserve(height);
+	for (int i = 0; i < height_; i++)
+		for (int j = 0; j < width_; j++)
+		{
+			if (GetTile(i, i)->GetTypeChar() == '0')
+				m_sprite.setTextureRect(sf::IntRect(0, 0, 16, 16));
 
-	m_texture.Load(Textures::Map, "Data/Textures/Map.png");
-	m_sprite.setTexture(m_texture.Get(Textures::Map));
+			if (GetTile(j, i)->GetTypeChar() == '1')
+				m_sprite.setTextureRect(sf::IntRect(16, 0, 16, 16));
+
+			if (GetTile(j, i)->GetTypeChar() == '2')
+				m_sprite.setTextureRect(sf::IntRect(32, 0, 16, 16));
+
+			if (GetTile(j, i)->GetTypeChar() == '3')
+				m_sprite.setTextureRect(sf::IntRect(48, 0, 16, 16));
+
+			if (GetTile(j, i)->GetTypeChar() == '4')
+				m_sprite.setTextureRect(sf::IntRect(64, 0, 16, 16));
+
+			m_sprite.setPosition(j * 16, i * 16);
+
+			window->draw(m_sprite);
+		}
+}
+
+void Map::SetTextures()
+{
+	m_texture.loadFromFile("Data/Textures/Map.png");
+	m_sprite.setTexture(m_texture);
+}
+
+Map::Map()
+{
+
+}
+
+Map::Map(const int width, const int height)
+{
+	width_ = width;
+	height_ = height;
+}
+
+Map::~Map()
+{
+
 }
 
 void Map::Load(const std::string path)
@@ -56,59 +96,38 @@ void Map::Load(const std::string path)
 	int width = atoi(dimensions.at(0).c_str());
 	int height = atoi(dimensions.at(1).c_str());
 
-	InitMap(width, height);
+	map_ = Map(width, height);
 
 	for (auto i = 0; i < strings.size(); i++)
 	{
-		m_map.push_back(strings.at(i));
+		std::vector<Tile> vector;
+		for (auto j = 0; j < strings.at(i).size(); ++j)
+			vector.push_back(Tile(j, i, strings.at(i).at(j)));
+		map_.tiles_.push_back(vector);
 	}
 }
 
-void Map::Save(const std::string path)
+Map* Map::GetMap()
 {
-	std::ofstream file(path);
-
-	std::ostringstream oss;
-	oss << m_width << ',' << m_height << "\n";
-	file << oss.str();
-
-	for (auto i = 0; i < m_map.size(); ++i)
-	{
-		file << m_map.at(i) << "\n";
-	}
+	return &map_;
 }
 
-void Map::MapRenderer(sf::RenderWindow* window)
+Tile* Map::GetTile(const short x, const short y) const
 {
-	for (auto i = 0; i < m_height; i++)
-		for (auto j = 0; j < m_width; j++)
-		{
-			if (m_map.at(i).at(j) == '0')
-				m_sprite.setTextureRect(sf::IntRect(0, 0, 32, 32));
-
-			if (m_map.at(i).at(j) == '1')
-				m_sprite.setTextureRect(sf::IntRect(32, 0, 32, 32));
-
-			if (m_map.at(i).at(j) == '2')
-				m_sprite.setTextureRect(sf::IntRect(64, 0, 32, 32));
-
-			m_sprite.setPosition(j * 32, i * 32);
-		
-			window->draw(m_sprite);
-		}
+	return &map_.tiles_.at(y).at(x);
 }
 
-void Map::draw(sf::RenderTarget& target, sf::RenderStates states) const
+Tile* Map::GetTile(const sf::Vector2f coordinates) const
 {
-	target.draw(m_sprite, states);
+	return &map_.tiles_.at(coordinates.y).at(coordinates.x);
 }
 
 int Map::GetWidth() const
 {
-	return m_width;
+	return width_;
 }
 
 int Map::GetHeight() const
 {
-	return m_height;
+	return height_;
 }

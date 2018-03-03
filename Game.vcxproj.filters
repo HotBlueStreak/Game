@@ -49,6 +49,9 @@
     <ClCompile Include="Sources\Map\Map.cpp">
       <Filter>Source Files\Map</Filter>
     </ClCompile>
+    <ClCompile Include="Sources\Map\Tile.cpp">
+      <Filter>Source Files\Map</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Sources\Utilities\stdafx.h">
@@ -73,6 +76,12 @@
       <Filter>Source Files\Entites</Filter>
     </ClInclude>
     <ClInclude Include="Sources\Map\Map.h">
+      <Filter>Source Files\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Map\Tile.h">
+      <Filter>Source Files\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Map\TileType.h">
       <Filter>Source Files\Map</Filter>
     </ClInclude>
   </ItemGroup>

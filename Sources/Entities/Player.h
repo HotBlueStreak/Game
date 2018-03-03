@@ -3,7 +3,7 @@
 #include "../Resource Manager/ResourceHolder.h"
 #include "../Resource Manager/ResourceIdentifiers.h"
 #include "../Event Manager/EventManager.h"
-#include "View.h"
+#include "../Map/Map.h"
 
 class Player : public sf::Drawable
 {
@@ -21,17 +21,17 @@ public:
 	void Update(sf::Time delta_time);
 	void Movement(sf::Time delta_time);
 	void ProcessEvents();
+	void InteractionWithMap();
 
 private:
 	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 	
-	short direction, speed;
+	short direction, speed, health;
 	sf::Vector2f delta;
+	bool life;
 
 	TextureHolder m_texture;
 	sf::Sprite m_sprite;
-
 	sf::Vector2f m_position;
-
 	EventManager m_event_manager;
 };

@@ -9,6 +9,42 @@ void Player::Update(sf::Time delta_time)
 {
 	ProcessEvents();
 	Movement(delta_time);
+	InteractionWithMap();
+}
+
+void Player::InteractionWithMap()
+{
+	for (int i = m_position.y / 16; i < (m_position.y + 16) / 16; i++)
+		for (int j = m_position.x / 16; j<(m_position.x + 16) / 16; j++)
+		{
+			if (Map::GetMap()->Map::GetTile(j, i)->GetTypeChar() == '1')
+			{
+				if (delta.y > 0)
+					m_position.y = i * 16 - 16;
+
+				if (delta.y < 0)
+					m_position.y = i * 16 + 16;
+
+				if (delta.x > 0)
+					m_position.x = j * 16 - 16;
+
+				if (delta.x < 0)
+					m_position.x = j * 16 + 16;
+			}
+
+			if (Map::GetMap()->Map::GetTile(j, i)->GetTypeChar() == '3')
+			{
+				health -= 40;
+				Map::GetMap()->Map::GetTile(j, i)->SetType(TileType::Ground);
+			}
+
+			if (Map::GetMap()->Map::GetTile(j, i)->GetTypeChar() == '4')
+			{
+				health += 20;
+				Map::GetMap()->Map::GetTile(j, i)->SetType(TileType::Ground);
+			}
+		}
+
 }
 
 void Player::ProcessEvents()

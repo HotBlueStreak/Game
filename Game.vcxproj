@@ -24,6 +24,7 @@
     <ClCompile Include="Sources\Main\Game.cpp" />
     <ClCompile Include="Sources\Main\Main.cpp" />
     <ClCompile Include="Sources\Map\Map.cpp" />
+    <ClCompile Include="Sources\Map\Tile.cpp" />
     <ClCompile Include="Sources\Utilities\stdafx.cpp" />
     <ClCompile Include="Sources\Window\GameWindow.cpp" />
   </ItemGroup>
@@ -32,6 +33,8 @@
     <ClInclude Include="Sources\Event Manager\EventManager.h" />
     <ClInclude Include="Sources\Main\Game.h" />
     <ClInclude Include="Sources\Map\Map.h" />
+    <ClInclude Include="Sources\Map\Tile.h" />
+    <ClInclude Include="Sources\Map\TileType.h" />
     <ClInclude Include="Sources\Resource Manager\ResourceHolder.h" />
     <ClInclude Include="Sources\Resource Manager\ResourceIdentifiers.h" />
     <ClInclude Include="Sources\Utilities\stdafx.h" />
