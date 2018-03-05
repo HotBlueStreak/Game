@@ -1,6 +1,6 @@
 #include "Game.h"
 
-Game::Game() : m_window("Game", sf::Vector2u(800, 600))
+Game::Game() : m_window("Game", sf::Vector2u(800, 600)), m_world(800, 600)
 {
 	Map::GetMap()->Load("Sources/Configurations/map.txt");
 	Map::GetMap()->SetTextures();
@@ -42,14 +42,29 @@ void Game::HandleInput()
 void Game::Update(sf::Time delta_time)
 {
 	m_window.Update();
-	m_player.Update(delta_time);
+
+	m_world.Update(delta_time);
+	if (Configuration::player == nullptr)
+	{
+		Configuration::player = new Player(m_world, 17, 17);
+		m_world.Add(Configuration::player);
+	}
+
+	float time = m_timer.getElapsedTime().asMilliseconds();
+
+	if (time > 3000)
+	{
+		Map::GetMap()->RandomMapGenerate();
+		m_timer.restart();
+	}
+	
 }
 
 void Game::Render()
 {
 	m_window.BeginDraw();
 	Map::GetMap()->MapRenderer(m_window.GetRenderWindow());
-	m_window.Draw(m_player);
+	m_window.Draw(m_world);
 	m_window.EndDraw();
 }
 

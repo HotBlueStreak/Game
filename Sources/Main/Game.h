@@ -2,10 +2,10 @@
 
 #include "../Window/GameWindow.h"
 #include "../Event Manager/EventManager.h"
-#include "../Resource Manager/ResourceHolder.h"
-#include "../Resource Manager/ResourceIdentifiers.h"
 #include "../Entities/Player.h"
 #include "../Map/Map.h"
+#include "../Entities/World.h"
+#include "../Utilities/random.h"
 
 
 class Game : private sf::NonCopyable
@@ -28,9 +28,8 @@ private:
 
 private:
 	GameWindow m_window;
-
-	Player m_player;
-	
+	World m_world;
+	sf::Clock m_timer;
 	sf::Clock m_clock;
 	sf::Time m_elapsed;
 };

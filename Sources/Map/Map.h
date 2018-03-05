@@ -5,8 +5,7 @@
 
 #include "Tile.h"
 #include "TileType.h"
-#include "../Resource Manager/ResourceHolder.h"
-#include "../Resource Manager/ResourceIdentifiers.h"
+#include "../Configurations/Configuration.h"
 
 class Map
 {
@@ -21,9 +20,10 @@ public:
 	int GetHeight() const;
 
 	void MapRenderer(sf::RenderWindow* window);
+	void RandomMapGenerate();
 
 	Tile* GetTile(const short x, const short y) const;
-	Tile* GetTile(const sf::Vector2f coordinates) const;
+	Tile* GetTile(const sf::Vector2i coordinates) const;
 
 private:
 	Map();
@@ -31,15 +31,15 @@ private:
 	~Map();
 
 private:
-	static Map map_;
+	static Map m_map;
 
-	int width_;
-	int height_;
+	int m_width;
+	int m_height;
 
-	//TextureHolder texture;
-	sf::Texture m_texture;
+	int m_count_elements;
+	
 	sf::Sprite m_sprite;
 
-	std::vector<std::vector<Tile>> tiles_;
+	std::vector<std::vector<Tile>> m_tiles;
 };
 

@@ -1,37 +1,31 @@
 #pragma once
 
-#include "../Resource Manager/ResourceHolder.h"
-#include "../Resource Manager/ResourceIdentifiers.h"
-#include "../Event Manager/EventManager.h"
+#include "Entity.h"
+#include "Collision.h"
+#include "Shoot.h"
 #include "../Map/Map.h"
 
-class Player : public sf::Drawable
+class Player : public Entity
 {
 public:
-	Player();
+	Player(World& world, float x, float y);
 
-	void SetPosition(sf::Vector2f position);
-	void SetPosition(float x, float y);
+	virtual bool isCollide(const Entity& other) const;
+	virtual void Update(sf::Time delta_time);
 
-	sf::Vector2f GetPosition();
-
-	void LoadTextures();
-	sf::Sprite GetSprite();
-
-	void Update(sf::Time delta_time);
+	void Control();
 	void Movement(sf::Time delta_time);
-	void ProcessEvents();
-	void InteractionWithMap();
+	void CollisionWithMap();
+	void Shoot();
+	virtual void onDestroy();
+
+	int m_state;
 
 private:
-	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
-	
-	short direction, speed, health;
+	int m_speed;
+	int m_health;
 	sf::Vector2f delta;
-	bool life;
-
-	TextureHolder m_texture;
-	sf::Sprite m_sprite;
 	sf::Vector2f m_position;
-	EventManager m_event_manager;
+	float m_time_since_last_shoot;
+
 };

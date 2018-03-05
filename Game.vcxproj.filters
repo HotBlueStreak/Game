@@ -26,6 +26,9 @@
     <Filter Include="Source Files\Map">
       <UniqueIdentifier>{b944c8e6-207b-42dd-9e41-0116652ff480}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Configurations">
+      <UniqueIdentifier>{0865b518-11b7-44a1-976a-1d98e4e80ff9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Sources\Main\Main.cpp">
@@ -52,6 +55,24 @@
     <ClCompile Include="Sources\Map\Tile.cpp">
       <Filter>Source Files\Map</Filter>
     </ClCompile>
+    <ClCompile Include="Sources\Entities\Entity.cpp">
+      <Filter>Source Files\Entites</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Configurations\Configuration.cpp">
+      <Filter>Source Files\Configurations</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Entities\World.cpp">
+      <Filter>Source Files\Entites</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Entities\Collision.cpp">
+      <Filter>Source Files\Entites</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Utilities\random.cpp">
+      <Filter>Source Files\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Entities\Shoot.cpp">
+      <Filter>Source Files\Entites</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Sources\Utilities\stdafx.h">
@@ -61,9 +82,6 @@
       <Filter>Source Files\Main</Filter>
     </ClInclude>
     <ClInclude Include="Sources\Resource Manager\ResourceHolder.h">
-      <Filter>Source Files\Resource Manager</Filter>
-    </ClInclude>
-    <ClInclude Include="Sources\Resource Manager\ResourceIdentifiers.h">
       <Filter>Source Files\Resource Manager</Filter>
     </ClInclude>
     <ClInclude Include="Sources\Event Manager\EventManager.h">
@@ -83,6 +101,24 @@
     </ClInclude>
     <ClInclude Include="Sources\Map\TileType.h">
       <Filter>Source Files\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Entities\Entity.h">
+      <Filter>Source Files\Entites</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Configurations\Configuration.h">
+      <Filter>Source Files\Configurations</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Entities\World.h">
+      <Filter>Source Files\Entites</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Entities\Collision.h">
+      <Filter>Source Files\Entites</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Utilities\random.h">
+      <Filter>Source Files\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Entities\Shoot.h">
+      <Filter>Source Files\Entites</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

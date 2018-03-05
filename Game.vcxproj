@@ -19,24 +19,35 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Sources\Configurations\Configuration.cpp" />
+    <ClCompile Include="Sources\Entities\Collision.cpp" />
+    <ClCompile Include="Sources\Entities\Entity.cpp" />
     <ClCompile Include="Sources\Entities\Player.cpp" />
+    <ClCompile Include="Sources\Entities\Shoot.cpp" />
+    <ClCompile Include="Sources\Entities\World.cpp" />
     <ClCompile Include="Sources\Event Manager\EventManager.cpp" />
     <ClCompile Include="Sources\Main\Game.cpp" />
     <ClCompile Include="Sources\Main\Main.cpp" />
     <ClCompile Include="Sources\Map\Map.cpp" />
     <ClCompile Include="Sources\Map\Tile.cpp" />
+    <ClCompile Include="Sources\Utilities\random.cpp" />
     <ClCompile Include="Sources\Utilities\stdafx.cpp" />
     <ClCompile Include="Sources\Window\GameWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Sources\Configurations\Configuration.h" />
+    <ClInclude Include="Sources\Entities\Collision.h" />
+    <ClInclude Include="Sources\Entities\Entity.h" />
     <ClInclude Include="Sources\Entities\Player.h" />
+    <ClInclude Include="Sources\Entities\Shoot.h" />
+    <ClInclude Include="Sources\Entities\World.h" />
     <ClInclude Include="Sources\Event Manager\EventManager.h" />
     <ClInclude Include="Sources\Main\Game.h" />
     <ClInclude Include="Sources\Map\Map.h" />
     <ClInclude Include="Sources\Map\Tile.h" />
     <ClInclude Include="Sources\Map\TileType.h" />
     <ClInclude Include="Sources\Resource Manager\ResourceHolder.h" />
-    <ClInclude Include="Sources\Resource Manager\ResourceIdentifiers.h" />
+    <ClInclude Include="Sources\Utilities\random.h" />
     <ClInclude Include="Sources\Utilities\stdafx.h" />
     <ClInclude Include="Sources\Window\GameWindow.h" />
   </ItemGroup>
