@@ -7,39 +7,27 @@
 #include "TileType.h"
 #include "../Configurations/Configuration.h"
 
-class Map
+class Map : public sf::Drawable
 {
 public:
-	static void Load(const std::string path);
-
-	static Map* GetMap();
-
-	void SetTextures();
+	Map(Configuration::Textures id, std::string path);
 
 	int GetWidth() const;
 	int GetHeight() const;
 
-	void MapRenderer(sf::RenderWindow* window);
-	void RandomMapGenerate();
+	void ShowCollisionMap(sf::RenderWindow* window);
 
-	Tile* GetTile(const short x, const short y) const;
-	Tile* GetTile(const sf::Vector2i coordinates) const;
-
-private:
-	Map();
-	Map(const int width, const int height);
-	~Map();
+	Tile GetTile(int x, int y) const;
+	Tile GetTile(sf::Vector2i coordinates) const;
 
 private:
-	static Map m_map;
-
 	int m_width;
 	int m_height;
 
-	int m_count_elements;
-	
 	sf::Sprite m_sprite;
 
-	std::vector<std::vector<Tile>> m_tiles;
-};
+	std::vector<std::vector<Tile>> m_collision_map;
 
+private:
+	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
+};

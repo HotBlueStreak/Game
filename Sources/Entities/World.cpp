@@ -11,7 +11,7 @@ World::~World()
 
 void World::Add(Entity* entity)
 {
-	m_entities_tmp.push_back(entity);
+	m_entities.push_back(entity);
 }
 
 void World::Clear()
@@ -20,9 +20,9 @@ void World::Clear()
 		delete entity;
 	m_entities.clear();
 	
-	for (Entity* entity : m_entities_tmp)
+	for (Entity* entity : m_entities)
 		delete entity;
-	m_entities_tmp.clear();
+	m_entities.clear();
 }
 
 bool World::isCollide(const Entity& other)
@@ -35,7 +35,7 @@ bool World::isCollide(const Entity& other)
 
 int World::GetSize()
 {
-	return m_entities.size() + m_entities_tmp.size();
+	return m_entities.size() + m_entities.size();
 }
 
 int World::GetX() const
@@ -55,14 +55,30 @@ const std::list<Entity*> World::GetEntities() const
 
 void World::Update(sf::Time delta_time)
 {
-	if (m_entities_tmp.size() > 0)
-		m_entities.merge(m_entities_tmp);
 
 	for (Entity* entity_ptr : m_entities)
 	{
 		Entity& entity = *entity_ptr;
 
 		entity.Update(delta_time);
+	}
+
+	const auto end = m_entities.end();
+	for (auto it_i = m_entities.begin(); it_i != end; ++it_i)
+	{
+		Entity& entity_i = **it_i;
+		auto it_j = it_i;
+		it_j++;
+		for (; it_j != end; ++it_j)
+		{
+			Entity& entity_j = **it_j;
+
+			if (entity_i.isAlive() and entity_i.isCollide(entity_j))
+				entity_i.onDestroy(entity_j);
+
+			if (entity_j.isAlive() and entity_j.isCollide(entity_i))
+				entity_j.onDestroy(entity_i);
+		}
 	}
 
 	for (auto it = m_entities.begin(); it != m_entities.end();)

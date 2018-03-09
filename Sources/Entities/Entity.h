@@ -12,7 +12,7 @@ public:
 
 	virtual bool isAlive() const;
 	virtual bool isCollide(const Entity& other) const = 0;
-	virtual void onDestroy();
+	virtual void onDestroy(Entity& other);
 
 	const sf::Vector2f& GetPosition() const;
 	void SetPosition(float x, float y);
@@ -22,6 +22,7 @@ public:
 
 protected:
 	friend class Player;
+	friend class Health;
 	friend class Bullet;
 
 	sf::Sprite m_sprite;

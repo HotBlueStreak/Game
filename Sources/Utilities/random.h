@@ -1,9 +1,16 @@
 #pragma once
 
-class Random
+inline void RandomInit() 
 {
-public:
-	static void RandomInit();
-	static float RandomF(float min, float max);
-	static int RandomI(int min, int max);
+	srand(time(NULL));
 };
+
+inline float Random(float min, float max) 
+{ 
+	return (rand() / float(RAND_MAX))*(max - min) + min; 
+}
+
+inline int Random(int min, int max) 
+{ 
+	return rand() % (max - min + 1) + min; 
+}

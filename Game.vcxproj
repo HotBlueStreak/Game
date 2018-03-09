@@ -22,6 +22,7 @@
     <ClCompile Include="Sources\Configurations\Configuration.cpp" />
     <ClCompile Include="Sources\Entities\Collision.cpp" />
     <ClCompile Include="Sources\Entities\Entity.cpp" />
+    <ClCompile Include="Sources\Entities\Items.cpp" />
     <ClCompile Include="Sources\Entities\Player.cpp" />
     <ClCompile Include="Sources\Entities\Shoot.cpp" />
     <ClCompile Include="Sources\Entities\World.cpp" />
@@ -30,7 +31,6 @@
     <ClCompile Include="Sources\Main\Main.cpp" />
     <ClCompile Include="Sources\Map\Map.cpp" />
     <ClCompile Include="Sources\Map\Tile.cpp" />
-    <ClCompile Include="Sources\Utilities\random.cpp" />
     <ClCompile Include="Sources\Utilities\stdafx.cpp" />
     <ClCompile Include="Sources\Window\GameWindow.cpp" />
   </ItemGroup>
@@ -38,6 +38,7 @@
     <ClInclude Include="Sources\Configurations\Configuration.h" />
     <ClInclude Include="Sources\Entities\Collision.h" />
     <ClInclude Include="Sources\Entities\Entity.h" />
+    <ClInclude Include="Sources\Entities\Items.h" />
     <ClInclude Include="Sources\Entities\Player.h" />
     <ClInclude Include="Sources\Entities\Shoot.h" />
     <ClInclude Include="Sources\Entities\World.h" />

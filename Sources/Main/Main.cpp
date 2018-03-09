@@ -5,8 +5,8 @@ int main()
 {
 	Configuration::initialize();
 
-	Game game;
-	game.Run();
+	Game game(800, 600);
+	game.Run(60);
 
 	return 0;
 }

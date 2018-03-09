@@ -21,8 +21,8 @@ public:
 	void SetTypeChar(const char type);
 
 private:
-	int x_;
-	int y_;
-	TileType type_;
+	int m_x;
+	int m_y;
+	TileType m_type;
 };
 

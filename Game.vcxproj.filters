@@ -67,10 +67,10 @@
     <ClCompile Include="Sources\Entities\Collision.cpp">
       <Filter>Source Files\Entites</Filter>
     </ClCompile>
-    <ClCompile Include="Sources\Utilities\random.cpp">
-      <Filter>Source Files\Utilities</Filter>
-    </ClCompile>
     <ClCompile Include="Sources\Entities\Shoot.cpp">
+      <Filter>Source Files\Entites</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Entities\Items.cpp">
       <Filter>Source Files\Entites</Filter>
     </ClCompile>
   </ItemGroup>
@@ -118,6 +118,9 @@
       <Filter>Source Files\Utilities</Filter>
     </ClInclude>
     <ClInclude Include="Sources\Entities\Shoot.h">
+      <Filter>Source Files\Entites</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Entities\Items.h">
       <Filter>Source Files\Entites</Filter>
     </ClInclude>
   </ItemGroup>

@@ -26,7 +26,6 @@ public:
 
 private:
 	std::list<Entity*> m_entities;
-	std::list<Entity*> m_entities_tmp;
 
 	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 

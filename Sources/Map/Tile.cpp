@@ -7,15 +7,15 @@ Tile::Tile()
 
 Tile::Tile(int x, int y, TileType type)
 {
-	x_ = x;
-	y_ = y;
-	type_ = type;
+	m_x = x;
+	m_y = y;
+	m_type = type;
 }
 
-Tile::Tile(const int x, const int y, const char type)
+Tile::Tile(int x, int y, char type)
 {
-	x_ = x;
-	y_ = y;
+	m_x = x;
+	m_y = y;
 	SetTypeChar(type);
 }
 
@@ -26,42 +26,33 @@ Tile::~Tile()
 
 sf::Vector2i Tile::GetCoordinates() const
 {
-	return sf::Vector2i(x_, y_);
+	return sf::Vector2i(m_x, m_y);
 }
 
 int Tile::GetX() const
 {
-	return x_;
+	return m_x;
 }
 
 int Tile::GetY() const
 {
-	return y_;
+	return m_y;
 }
 
 TileType Tile::GetType() const
 {
-	return type_;
+	return m_type;
 }
 
 char Tile::GetTypeChar() const
 {
-	switch (type_)
+	switch (m_type)
 	{
-	case TileType::Ground:
+	case TileType::Passable:
 		return '0';
 
-	case TileType::Stone:
+	case TileType::Impassable:
 		return '1';
-	
-	case TileType::Wall:
-		return '2';
-
-	case TileType::Flower:
-		return '3';
-
-	case TileType::Heart:
-		return '4';
 
 	default:
 		return '0';
@@ -70,7 +61,7 @@ char Tile::GetTypeChar() const
 
 void Tile::SetType(const TileType type)
 {
-	type_ = type;
+	m_type = type;
 }
 
 void Tile::SetTypeChar(const char type)
@@ -78,27 +69,15 @@ void Tile::SetTypeChar(const char type)
 	switch (type)
 	{
 	case '0':
-		type_ = TileType::Ground;
+		m_type = TileType::Passable;
 		break;
 
 	case '1':
-		type_ = TileType::Stone;
-		break;
-	
-	case '2':
-		type_ = TileType::Wall;
-		break;
-
-	case '3':
-		type_ = TileType::Flower;
-		break;
-
-	case '4':
-		type_ = TileType::Heart;
+		m_type = TileType::Impassable;
 		break;
 
 	default:
-		type_ = TileType::Ground;
+		m_type = TileType::Passable;
 		break;
 	}
 }

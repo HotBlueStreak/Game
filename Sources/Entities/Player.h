@@ -3,12 +3,13 @@
 #include "Entity.h"
 #include "Collision.h"
 #include "Shoot.h"
+#include "Items.h"
 #include "../Map/Map.h"
 
 class Player : public Entity
 {
 public:
-	Player(World& world, float x, float y);
+	Player(World& world);
 
 	virtual bool isCollide(const Entity& other) const;
 	virtual void Update(sf::Time delta_time);
@@ -17,8 +18,9 @@ public:
 	void Movement(sf::Time delta_time);
 	void CollisionWithMap();
 	void Shoot();
-	virtual void onDestroy();
-
+	void ChangeHealth(const int quantity);
+	virtual void onDestroy(Entity& other);
+	
 	int m_state;
 
 private:

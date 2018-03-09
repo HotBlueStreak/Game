@@ -8,8 +8,8 @@ Entity::Entity(Configuration::Textures id, World& world) : m_world(world), m_ali
 
 	switch (id)
 	{
-	case Configuration::Textures::Map:
-		m_sprite.setTextureRect(sf::IntRect(0, 0, 16, 16));
+	case Configuration::Textures::Mape:
+		m_sprite.setTextureRect(sf::IntRect(0, 0, 32, 32));
 		break;
 
 	case Configuration::Textures::PlayerRed:
@@ -18,6 +18,10 @@ Entity::Entity(Configuration::Textures id, World& world) : m_world(world), m_ali
 
 	case Configuration::Textures::Weapons:
 		m_sprite.setTextureRect(sf::IntRect(0, 0, 4, 4));
+		break;
+
+	case Configuration::Textures::Items:
+		m_sprite.setTextureRect(sf::IntRect(0, 0, 16, 16));
 		break;
 
 	default:
@@ -51,7 +55,7 @@ bool Entity::isAlive() const
 	return m_alive;
 }
 
-void Entity::onDestroy()
+void Entity::onDestroy(Entity& other)
 {
 	m_alive = false;
 }

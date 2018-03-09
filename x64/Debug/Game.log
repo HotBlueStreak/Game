@@ -1,6 +1,9 @@
 ﻿  Shoot.cpp
-c:\users\hotbl\documents\github\game\game\sources\entities\shoot.cpp(26): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\hotbl\documents\github\game\game\sources\entities\shoot.cpp(30): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\hotbl\documents\github\game\game\sources\utilities\random.h(5): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\hotbl\documents\github\game\game\sources\entities\shoot.cpp(5): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+c:\users\hotbl\documents\github\game\game\sources\entities\shoot.cpp(6): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+c:\users\hotbl\documents\github\game\game\sources\entities\shoot.cpp(31): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 c:\users\hotbl\documents\github\game\game\sources\entities\shoot.cpp(35): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\hotbl\documents\github\game\game\sources\entities\shoot.cpp(39): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\hotbl\documents\github\game\game\sources\entities\shoot.cpp(40): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\hotbl\documents\github\game\game\sources\entities\shoot.cpp(44): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
   Game.vcxproj -> C:\Users\hotbl\Documents\GitHub\Game\Game\Bin\x64\Debug\Game.exe
